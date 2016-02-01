@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pickup:</strong>
+  <%= @reservation.pickup %>
+</p>
+
+<p>
+  <strong>Collection:</strong>
+  <%= @reservation.collection %>
+</p>
+
+<p>
+  <strong>Pax:</strong>
+  <%= @reservation.pax %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

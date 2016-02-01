@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pickup: 2016-02-01
+  collection: 2016-02-01 14:03:27
+  pax: 1
+
+two:
+  pickup: 2016-02-01
+  collection: 2016-02-01 14:03:27
+  pax: 1
