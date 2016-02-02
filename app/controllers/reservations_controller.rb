@@ -5,6 +5,8 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   def index
     @reservations = Reservation.all
+    @clients = Client.all
+    @drivers = Driver.all
   end
 
   # GET /reservations/1
@@ -69,6 +71,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:pickup, :collection, :pax)
+      params.require(:reservation).permit(:pickup, :collection, :pax, :client_id, :driver_id)
     end
 end

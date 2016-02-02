@@ -23,6 +23,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Nested form for simple form nesting
+# gem 'nested_form', '~> 0.3.2'
+
+# Use of cocoon for nesting forms
+# gem 'cocoon', '~> 1.2', '>= 1.2.7'
+
+# Use of simple_form for nesting forms
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
