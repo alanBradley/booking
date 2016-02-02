@@ -26,6 +26,9 @@
   <div class="field">
     <%= f.association :driver, :label_method => lambda { |driver| "#{driver.fname}  #{driver.lname}" } %>
   </div>
+  <div class="field">
+    <%= f.association :tour, :label_method => lambda { |tour| "#{tour.title}  #{tour.cost}" } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

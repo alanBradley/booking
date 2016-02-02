@@ -10,18 +10,22 @@
       <th>Pax</th>
       <th>Client</th>
       <th>Driver</th>
+      <th>Tour</th>
+      <th>Cost</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @reservations.zip(@clients, @drivers).each do |reservation, client, driver| %>
+    <% @reservations.zip(@clients, @drivers, @tours).each do |reservation, client, driver, tour| %>
       <tr>
-        <td><%= reservation.pickup %></td>
-        <td><%= reservation.collection %></td>
+        <td><%= reservation.pickup.strftime('%v') %></td>
+        <td><%= reservation.collection.strftime('%r') %></td>
         <td><%= reservation.pax %></td>
         <td><%= reservation.client.fname %></td>
         <td><%= reservation.driver.fname %></td>
+        <td><%= reservation.tour.title %></td>
+        <td><%= reservation.tour.cost %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,6 +34,29 @@
   </tbody>
 </table>
 
+<table>
+  <thead>
+    <tr>
+      <th>Drivers Available</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.fname %></td>
+
+        <td><%= link_to 'Show', driver %></td>
+        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <br>
 
 <%= link_to 'New Reservation', new_reservation_path %>
+<%= link_to 'New Client', new_client_path %>
+<%= link_to 'New Tour', new_tour_path %>
+<%= link_to 'New Driver', new_driver_path %>
